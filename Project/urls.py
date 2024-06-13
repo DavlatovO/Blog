@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.urls import path, include, re_path
 from rest_framework import routers
 from main.views import *
+from django.conf import settings
+from django.conf.urls.static import static
 
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
@@ -56,4 +58,5 @@ urlpatterns = [
     path('post-detail/<int:pk>/', PostAPIDetail.as_view()),
     path('like-detail/<int:pk>/', LikeAPIDetail.as_view()),
     path('comment-detail/<int:pk>/', CommentAPIDetail.as_view()),
-]
+]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

@@ -4,7 +4,7 @@ from .import models
 class PostSerializers(serializers.ModelSerializer):
     class Meta:
         model = models.Post
-        fields = ['title', 'text', 'author', 'created_at']
+        fields = ['title', 'text', 'author', 'image', 'created_at']
 
 class LikeSerializers(serializers.ModelSerializer):
     class Meta:
